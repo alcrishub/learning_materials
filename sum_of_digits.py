@@ -1,11 +1,10 @@
-sum = 0
-new_sum = 0
-x = 99999499
-for digit in str(x):
-    sum += int(digit)
-print(sum)
-if sum/10 > 0:
-    for digit in str(sum):
-        new_sum += int(digit)
-    print(new_sum)
-    
+def digitAdder(number):
+    sum = 0
+    for digit in str(number):
+        sum += int(digit)
+    if sum//10 > 0:
+        digitAdder(sum)
+    else:
+        print(sum)
+        
+digitAdder(12345678)
